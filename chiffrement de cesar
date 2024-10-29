@@ -1,4 +1,5 @@
-# Projet-HMSdef cesar(message, decalage, mode="chiffrer"):
+# Projet-HMS 
+def cesar(message, decalage, mode="chiffrer"):
     resultat = ""
     
     if mode == "dechiffrer":
