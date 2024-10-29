@@ -1,0 +1,24 @@
+# Projet-HMSdef cesar(message, decalage, mode="chiffrer"):
+    resultat = ""
+    
+    if mode == "dechiffrer":
+        decalage = -decalage
+    
+    for char in message:
+        if char.isalpha():  
+            point_de_depart = ord('A') if char.isupper() else ord('a')
+            nouvelle_position = (ord(char) - point_de_depart + decalage) % 26
+            resultat += chr(point_de_depart + nouvelle_position)
+        else:
+            resultat += char 
+
+    return resultat
+
+message = "BONJOUR"  
+decalage = 3         
+mode = "chiffrer"   
+
+print("Résultat :", cesar(message, decalage, mode))
+
+mode = "dechiffrer"  
+print("Résultat déchiffré :", cesar(cesar(message, decalage, "chiffrer"), decalage, mode))
